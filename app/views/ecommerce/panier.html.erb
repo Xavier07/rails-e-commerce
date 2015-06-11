@@ -1,0 +1,138 @@
+<div class="row">
+	<div class="col-md-8">
+		<div class="form-inline form-group">
+			<label for="numero-client">Numéro Client :</label>
+			<intput type="text" class="form-control" id="exampleInputName2">007</intput>
+			<label class="client" for="nom">Prénom :</label>
+			<intput type="text" class="form-control" id="exampleInputName2">Bernard</intput>
+			<label class="client" for="nom">Nom :</label>
+			<intput type="text" class="form-control" id="exampleInputName2">Dupont</intput>
+		</div>				
+		<div class="form-inline form-group">
+			<label for="adresse-client">Adresse :</label>
+			<intput type="text" class="form-control" id="exampleInputName2">55 Rue du Faubourg Saint-Honoré, 75008 Paris</intput>
+			<label class="client" for="pays-client">Pays :</label>
+			<intput type="text" class="form-control" id="exampleInputName2">FRANCE</intput>
+		</div>
+		<div class="form-inline form-group">
+			<label for="telephone-client">Téléphone :</label>
+			<intput type="text" class="form-control" id="exampleInputName2">00 00 00 00 00</intput>
+			<label class="client" for="numero-client">Mail :</label>
+			<intput type="text" class="form-control" id="exampleInputName2">b.dupont@simplonve.co</intput>
+		</div>
+	</form>
+</div>
+<div class="col-md-2 text-right form-inline">
+	<label for="numero-facture">N° Facture :
+		<intput type="text" class="form-control" id="exampleInputName2">0000174</intput>
+	</label>
+	<label for="date-facture">Date :
+		<intput type="text" class="form-control" id="exampleInputName2">04/06/2015</input>
+		</label>
+	</div>
+	<div class="col-md-2 image-caddie-panier">
+		<img src="images/caddie-orange.png" alt="panier-orange">
+	</div>
+	<div class="col-md-12">
+		<div class="table-responsive">
+			<table id="example" class="table-panier">
+				<thead>
+					<tr>
+						<th class="center">Référence produit</th>
+						<th class="center">Nom de l'article</th>
+						<th class="center">Description</th>
+						<th class="center">Quantité</th>
+						<th class="center">Prix HT</th>
+						<th class="center">
+							<div class="btn-group" role="group" aria-label="...">
+								<a href="/" type="button" class="btn"><img src="images/ajouter.png" alt="ajouter"></a>
+							</div>
+						</th>  
+					</tr>
+				</thead>
+					 <% stockage_table_commande = [] 
+					 	stockage_quantite_article = []
+					 	stockage_table_id = []
+						afficher_article = []
+						afficher_descriptif_panier = []
+						afficher_prixproduit = []
+						@commande.each do |produit| 
+						 	stockage_table_commande << produit.refproduit
+						 	stockage_table_id << produit.id
+						 	stockage_quantite_article << produit.quantitearticle
+						end 
+						@table_produit.each do |colonne_produit|
+							(0...stockage_table_commande.length).each do |produit| 
+								if colonne_produit.refproduit == stockage_table_commande[produit]
+						 	  		afficher_article << colonne_produit.article 
+						 	  		afficher_descriptif_panier << colonne_produit.descriptif_panier
+						 	  		afficher_prixproduit << colonne_produit.prixproduit
+								end
+						 	end
+					end %>
+					<tbody>
+						<% (0...afficher_article.length).each do |produit| %>
+						<tr>
+							<td class="center"><%= stockage_table_commande[produit] %></td>
+							<td class="center"><%= afficher_article[produit] %></td>
+							<td class="justify"><%= afficher_descriptif_panier[produit] %></td>
+							<td class="center"><%= stockage_quantite_article[produit] %></td>
+							<td class="center"><%= afficher_prixproduit[produit].to_s.tr(".",",") %></td>
+							<td class="center">
+								<div class="btn-group" role="group" aria-label="...">
+									<form action="/<%= stockage_table_id[produit] %>" method="post">
+										<input type="hidden" name="_method" value="delete">
+										<button type="submit" class="btn" value="Delete">
+											<img src="images/poubelle.png" alt="poubelle">
+										</button>
+									</form>
+
+								</div>
+							</td>
+						</tr>
+						<% end %>
+				</tbody>
+			</table>
+		</div>	
+	</div>
+	<div class="col-md-12">
+		<div class="col-md-12 form-inline text-right">
+			<div class="prix_total">
+				<label for="Total_HT">Total (ht) :</label>
+				<intput class="form-control" type="text" id="exampleInputName2">
+					<% affichage_ttc = 0
+					(0...afficher_article.length).each do |prix|
+						affichage_ttc += afficher_prixproduit[prix] * stockage_quantite_article[prix]
+					end
+					%>
+					<%= sprintf("%.2f", affichage_ttc).to_s.tr(".",",") %>
+				</intput>
+				<label> € </label>
+			</div>
+			<div class="prix_tva">
+				<label for="TVA">TVA 20 % :</label>
+				<intput class="form-control" type="text" id="exampleInputName2">
+				<% tva = (affichage_ttc * 20 / 100).to_s
+				affichage_tva = ""
+				tva.length > 3 ? affichage_tva = tva[0..3] : affichage_tva = tva %>
+				<%= sprintf("%.2f", affichage_tva).to_s.tr(".",",") %>
+				</intput>
+
+				<label> € </label>
+			</div>
+			<div class="prix_total">
+				<label for="Total_TTC">Total (ttc) :</label>
+				<intput type="text" class="form-control prix_total" id="exampleInputName2">
+				<% affichage_final = affichage_ttc.to_f + affichage_tva.to_f%>
+				<%= sprintf("%.2f", affichage_final).to_s.tr(".",",") %>
+				</intput>
+				<label> € </label>
+			</div>
+		</div>
+		<div class="col-md-8 bouton-validation">
+			<button type="button" class="btn btn-default">
+				<img src="images/bouton-valider-commande.png" alt="Valider la commande">
+			</button>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,44 @@
+<div class="row">
+	<div class="col-md-12">
+		<div class="col-md-4">
+			<input class="imgproduit-fiche-produit" type="image" src="images/<%= @produit_select.refproduit %>.jpg"/> 
+		</div>
+
+		<div class="col-md-8">
+			<h2><%= @produit_select.article %></h2>
+			<hr>
+			<p><b>Description du produit:</b></p>
+			<p><%= @produit_select.descriptif %></p>
+			<hr>
+		</div>
+		<div class="col-md-8 info-prix">
+			<div class="col-md-2">
+				<div>Réf. : <%= @produit_select.refproduit %></div>
+				<div class="prix"><%= @produit_select.prixproduit.to_s.tr(".",",") %><sup>€ ht</sup> </div>
+				<div class="piece">Piéce</div>
+			</div>
+			<div class="col-md-3">
+				<th>
+					<div class="stock">
+						<div class="nombre-en-stock">
+							<%= @produit_select.stock %>
+						</div>
+						<div class="image-stock">
+							<img src="images/stock.png"/>
+						</div>
+					</div>
+				</th>	
+			</div>
+			<div class="col-md-7 centrage-quantite">
+				<th>		
+					<form method="post" action="/ajout">
+						<label for="quantite">Quantité :</label>
+						<input type="text" class="hidden" name="valeur[refproduit]" placeholder="" value="<%= @produit_select.refproduit %>" >
+						<input class="quantite" id="quantite" type="number" name="valeur[quantitearticle]" placeholder="" value="1">
+						<button class="bouton" type="submit"><img src="images/caddie-vert.png" class="pull-center"/>Ajouter au panier</button>
+					</form>
+				</th>
+			</div>
+		</div>
+	</div>
+</div>

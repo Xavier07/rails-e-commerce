@@ -1,0 +1,262 @@
+.row {
+	margin: 1%;
+}
+
+.logo, .reseau-sociaux {
+	display: block;
+	width: 100%;
+	text-align: center;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+
+.form-control {
+	border: solid 1px;
+	border-color: rgb(18,89,144);
+}
+
+.logo img {
+	display: inline;
+}
+
+.nav {
+	background-color: white;
+	border: solid 1px;
+	border-color: rgb(18,89,144);
+	border-radius: 4px;
+}
+
+.navbar {
+ background-color: rgba(18,89,144,5);
+ margin-left: 2%;
+ margin-right: 2%;
+}
+
+.navbar-form {
+	margin-top: 25px;
+}
+
+.presentation-produit {
+	border: solid 0.1px;
+	border-color: rgba(18,89,144,0.5);
+}
+
+.promo {
+	margin-top: 1%;
+	text-align: center;
+}
+
+.client {
+	margin-left: 2%;
+}
+
+.produit {
+	color:rgb(18,89,144);
+	font-size:22px; 
+}
+
+.prix {
+	color:red;
+	font-weight:bold; 
+	font-size:30px ;
+}
+
+.prix_total,.prix_tva {
+	display : block;
+	margin: 2% 0% 0% 2%;
+	color:black;
+	font-weight:bold; 
+	font-size:20px ;
+}
+
+
+h1 {
+	font-size: 3.8em;
+	color:rgb(18,89,144);
+	text-align: center;
+	border:solid;
+	border-color: rgb(115,146,58);
+	padding-top: 3%;
+	padding-bottom: 3%;
+}
+
+h2 {
+	font-size: 3em;
+}
+
+h4 {
+	font-size: 1em;
+	text-align: center;
+	color: rgb(18,89,144);
+}
+
+hr { 
+	border: 0; 
+	width: 90%;
+	height: 1px; 
+	background: #333; 
+	background-image: linear-gradient(to right, #ccc, #333, #ccc); 
+}
+
+.image-titre {
+	margin: 2% 2% 0% 5%;
+}
+
+.image-caddie-panier {
+	position: top;
+	text-align: center;
+}
+
+.imgproduit-accueil {
+	margin: 1%;
+	width: 60%;
+}
+
+.imgproduit-fiche-produit {
+	margin: 5%;
+	width: 80%;
+}
+
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: rgb(18,89,144);
+}
+
+.bouton {
+	margin: 2% 10% 2% 10%;
+	color: green;
+	font-weight:bold; 
+	border-radius: 4px;
+	border: 1px solid;
+	border-color: green;
+}
+
+
+.info-prix {
+	display: inline-block;
+	margin-top : 2%;
+}
+
+.stock {
+	display: inline-block;
+	margin: 2% 10% 2% 10%;
+	padding: 5%;
+	color: green;
+}
+
+.nombre-en-stock {
+	display: inline-block;
+	font-weight:bold; 
+	font-size: 1.5em;
+}
+
+.image-stock {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	    touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: white;;
+}
+
+.piece {
+	font-size: 1.5em;	
+}
+
+.centrage-btn {
+	margin-top: 2%;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 50px;
+	text-align: center;
+}
+
+.centrage-quantite {
+	margin-top: 2%;
+	display: inline-block;
+	vertical-align: middle;
+	line-height: 50px;
+}
+
+.quantite {
+	text-align: right;
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	color: #777;
+	border-radius: 4px;
+	border: 1px solid;
+	border-color: rgb(18,89,144);
+	text-transform: uppercase;
+	width: 15%;
+	line-height: 25px;
+}
+
+.bouton-validation {
+	position:relative;
+	/*margin-top: 2%;*/
+	padding: 1.2em;
+}
+
+.texte-validation {
+	font-style: bold;
+	font-size: 2em;
+}
+
+.table-panier {
+	position: relative;
+	width: 100%;
+	background-color: #fff;
+	border-color: rgb(18,89,144);
+}
+.center {
+		text-align: center;
+}
+
+.justify {
+	text-align: justify;
+	padding-left: 2%;
+}
+.table-panier tr,
+.table-panier th,
+.table-panier td {
+    border: 1.5px solid rgb(18,89,144);
+ }
+
+.btn {
+	display: inline-block;
+	padding: 6px 12px;
+	margin-bottom: 0;
+	font-size: 14px;
+	font-weight: normal;
+	line-height: 1.42857143;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	-ms-touch-action: manipulation;
+	    touch-action: manipulation;
+	cursor: pointer;
+	-webkit-user-select: none;
+	   -moz-user-select: none;
+	    -ms-user-select: none;
+	        user-select: none;
+	background-image: none;
+	border: 1px solid transparent;
+	border-radius: 4px;
+	background-color: white;
+}
