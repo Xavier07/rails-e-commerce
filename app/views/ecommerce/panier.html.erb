@@ -31,7 +31,7 @@
 		</label>
 	</div>
 	<div class="col-md-2 image-caddie-panier">
-		<img src="images/caddie-orange.png" alt="panier-orange">
+		<%= image_tag("caddie-orange.png", alt: "panier-orange") %>
 	</div>
 	<div class="col-md-12">
 		<div class="table-responsive">
@@ -45,7 +45,7 @@
 						<th class="center">Prix HT</th>
 						<th class="center">
 							<div class="btn-group" role="group" aria-label="...">
-								<a href="/" type="button" class="btn"><img src="images/ajouter.png" alt="ajouter"></a>
+								<a href="/" type="button" class="btn"><%= image_tag("ajouter.png", alt: "ajouter") %></a>
 							</div>
 						</th>  
 					</tr>
@@ -131,7 +131,7 @@
 		</div>
 		<div class="col-md-8 bouton-validation">
 			<button type="button" class="btn btn-default">
-				<img src="images/bouton-valider-commande.png" alt="Valider la commande">
+				<%= image_tag("bouton-valider-commande.png", alt: "Valider la commande") %>
 			</button>
 		</div>
 	</div>

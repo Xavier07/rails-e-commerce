@@ -5,6 +5,8 @@ Rails.application.routes.draw do
   get '/accueil' => 'ecommerce#accueil'
   get '/:id' => 'ecommerce#fiche_produit'
   get '/panier' => 'ecommerce#panier'
+  post '/ajout' => 'ecommerce#ajout_panier'
+  post '/supprime' => 'ecommerce#supprime_panier'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
