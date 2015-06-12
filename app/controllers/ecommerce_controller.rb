@@ -1,6 +1,6 @@
 class EcommerceController < ApplicationController
 
-	def produit
+	def produit 
    		@produits = Produit.all
  	end
 
