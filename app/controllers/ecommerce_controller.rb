@@ -1,12 +1,11 @@
 class EcommerceController < ApplicationController
 
-	def produit 
+	def accueil 
    		@produits = Produit.all
  	end
 
  	def fiche_produit
  		@produit_select = Produit.find(params[:id])
- 		@produits = Produit.all
  	end
 
  	def panier

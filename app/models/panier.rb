@@ -1,6 +1,5 @@
-class Produit < ActiveRecord::Base
-  has_many :produits
+class Client < ActiveRecord::Base
   has_one :clients
   has_one :commandes
-  has_one :factures 
+  has_many :produits 
 end
