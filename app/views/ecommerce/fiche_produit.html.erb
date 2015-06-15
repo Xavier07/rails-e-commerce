@@ -1,7 +1,7 @@
 <div class="row">
 	<div class="col-md-12">
 		<div class="col-md-4">
-			<%= image_tag(@produit_select.refproduit + ".jpg", class: "imgproduit-fiche-produit") %>
+			<%= image_tag( @produit_select.refproduit + ".jpg", class: "imgproduit-fiche-produit") %>
 		</div>
 
 		<div class="col-md-8">
@@ -35,7 +35,7 @@
 						<label for="quantite">Quantité :</label>
 						<input type="text" class="hidden" name="valeur[refproduit]" placeholder="" value="<%= @produit_select.refproduit %>" >
 						<input class="quantite" id="quantite" type="number" name="valeur[quantitearticle]" placeholder="" value="1">
-						<button class="bouton" type="submit"><%= image_tag("caddie-vert.png", class: "pull-center") %>Ajouter au panier</button>
+						<button class="bouton-ajouter" type="submit"><%= image_tag("caddie-vert.png", class: "pull-center") %>Ajouter au panier</button>
 					</form>
 				</th>
 			</div>

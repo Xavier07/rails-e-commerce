@@ -132,6 +132,14 @@ hr {
 	border-color: green;
 }
 
+.bouton-ajouter {
+	margin: 2% 0% 2% 28%;
+	color: green;
+	font-weight:bold; 
+	border-radius: 4px;
+	border: 1px solid;
+	border-color: green;
+}
 
 .info-prix {
 	display: inline-block;
